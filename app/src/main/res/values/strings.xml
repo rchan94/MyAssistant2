@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Assistant</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_finance">Finance</string>
+    <string name="menu_car_details">Car Details</string>
+    <string name="menu_main_page">Main Page</string>
+    <string name="finance_remaining_label">This month:</string>
+</resources>

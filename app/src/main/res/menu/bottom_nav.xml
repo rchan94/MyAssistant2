@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/mainFragment"
+        android:icon="@android:drawable/btn_star"
+        android:title="@string/menu_main_page" />
+
+
+    <item
+        android:id="@+id/financeFragment"
+        android:icon="@android:drawable/btn_star"
+        android:title="@string/menu_finance" />
+
+    <item
+        android:id="@+id/carDetailsFragment"
+        android:icon="@android:drawable/btn_star"
+        android:title="@string/menu_car_details" />
+
+</menu>
