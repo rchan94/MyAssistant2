@@ -1,6 +1,5 @@
 package com.example.myassistant.finance
 
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,18 +23,25 @@ class FinanceAdapter(private val financeList: List<Payment>)
         holder.textView.item_description_value.text = financeList[position].description
         holder.textView.item_date_value.text = "${financeList[position].day}/${getDateExtension()}"
         holder.textView.item_payment_value.text = "£${financeList[position].amount}"
-        holder.textView.imageView.setImageDrawable(getImage())
+        holder.textView.imageView.setImageResource(getImage(financeList[position].type))
     }
 
-    private fun getImage(): Drawable? {
-        return R.drawable.savings as Drawable
+    private fun getImage(type: Type): Int {
+        return when(type) {
+            Type.CAR -> R.drawable.car
+            Type.MONEY -> R.drawable.savings
+            Type.MUSIC -> R.drawable.music
+            Type.PHONE -> R.drawable.phone
+            Type.SPORTS -> R.drawable.sports
+            Type.TV -> R.drawable.tv
+        }
     }
 
     override fun getItemCount(): Int = financeList.size
 
     private fun getDateExtension(): String {
-        val month = Calendar.getInstance().get(Calendar.DAY_OF_MONTH).toString()
-        val year = Calendar.getInstance().get(Calendar.YEAR).toString()
+        val month = Calendar.getInstance().get(Calendar.MONTH) + 1
+        val year = Calendar.getInstance().get(Calendar.YEAR)
         return "$month/$year"
     }
 }
